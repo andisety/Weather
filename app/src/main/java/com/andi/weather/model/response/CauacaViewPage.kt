@@ -1,4 +1,4 @@
-package com.andi.weather.model
+package com.andi.weather.model.response
 
 data class CauacaViewPage (
     val jam:String,

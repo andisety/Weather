@@ -9,11 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.andi.weather.R
 import com.andi.weather.adapter.CuacaAadapter
-import com.andi.weather.model.CauacaViewPage
+import com.andi.weather.model.response.DetailCuacaItem
 
 class Hariini : Fragment() {
 
-lateinit var rcList:RecyclerView
+    lateinit var rcList:RecyclerView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -24,26 +25,14 @@ lateinit var rcList:RecyclerView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val txt = arguments?.getParcelableArrayList<DetailCuacaItem>("data")
         initView(view)
-        setData()
-
-
-
-
-    }
-
-    fun setData(){
-        val listCuaca = arrayListOf<CauacaViewPage>(
-            CauacaViewPage("00:00","","30"),
-            CauacaViewPage("09:00","","60"),
-            CauacaViewPage("10:00","","10"),
-        )
-        val adapterC = CuacaAadapter(listCuaca)
+        val adapterC = txt?.let { CuacaAadapter(it) }
         rcList.adapter = adapterC
         rcList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.HORIZONTAL,false)
-
     }
+
+
     fun initView(view: View){
         rcList = view.findViewById(R.id.rcListHariini)
 

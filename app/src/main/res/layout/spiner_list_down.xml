@@ -1,6 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
-
-</TextView>
+<?xml version="1.0" encoding="UTF-8"?>
+<TextView
+    android:layout_gravity="center_horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="5dp"
+    android:theme="@style/temaDark"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="20sp"
+    android:fontFamily="@font/poppins"
+    android:textColor="@color/white"
+    tools:ignore="RtlSymmetry" />

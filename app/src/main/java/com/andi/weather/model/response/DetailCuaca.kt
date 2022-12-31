@@ -1,7 +1,4 @@
-package com.andi.weather.model
+package com.andi.weather.model.response
 
 
-import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
-
- class DetailCuaca : ArrayList<DetailCuacaItem>()
+class DetailCuaca : ArrayList<DetailCuacaItem>()

@@ -1,4 +1,4 @@
-package com.andi.weather.model
+package com.andi.weather.model.response
 
 
 import android.os.Parcelable

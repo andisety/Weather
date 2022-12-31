@@ -1,73 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:id="@+id/linearLayout"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <Spinner
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/mySpinner"
-        android:layout_width="wrap_content"
-        android:spinnerMode="dialog"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/subTitle"
-        android:layout_gravity="center_horizontal"
-        android:text="Jakarta Barat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:layout_marginTop="20dp"
-        android:id="@+id/tvSuhu"
-        android:layout_gravity="center_horizontal"
-        android:textSize="120sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="27&#xb0;"/>
-    <TextView
-        android:id="@+id/tvDate"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Jumat,31 juli 09:00"/>
-    <TextView
-        android:layout_marginTop="10dp"
-        android:id="@+id/tvStatus"
-        android:layout_gravity="center_horizontal"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cerah Berawan"/>
-    <ImageView
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="@color/design_default_color_on_secondary"/>
 
     <LinearLayout
+        android:paddingTop="20dp"
+        android:id="@+id/linear1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/bg"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Spinner
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/mySpinner"
+            android:layout_width="wrap_content"
+            android:popupBackground="@color/grey"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@color/white"
+            android:id="@+id/tvKec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:fontFamily="@font/poppins"
+            android:text="Jakarta Barat" />
+        <TextView
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            android:layout_marginTop="20dp"
+            android:id="@+id/tvSuhu"
+            android:layout_gravity="center_horizontal"
+            android:textSize="120sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="27&#xb0;"/>
+        <TextView
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            android:id="@+id/tvDate"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jumat,31 juli 09:00"/>
+        <TextView
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tvStatus"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cerah Berawan"/>
+
+        <ImageView
+            android:id="@+id/ivCuaca"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="120dp"
+            android:layout_height="120dp"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/linear1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/linerLayout2"
+        android:background="@color/white"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <com.google.android.material.tabs.TabLayout
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextColor="@color/grey"
+            app:tabIndicatorColor="@color/black"
+            android:textColor="@color/black"
+            android:background="@color/white"
             android:id="@+id/tbLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
+    <ProgressBar
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/pgBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

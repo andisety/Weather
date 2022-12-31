@@ -1,4 +1,4 @@
-package com.andi.weather.model
+package com.andi.weather.model.response
 
 
 import com.google.gson.annotations.SerializedName
